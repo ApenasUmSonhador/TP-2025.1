@@ -7,9 +7,9 @@ O propósito deste projeto é estudar e implementar conceitos de Programação O
 ## Estrutura do Projeto  
 A estrutura do projeto segue a seguinte organização:  
 ```yaml  
-Tecnicas-de-Programacao/  
-├── .gitignore                     # Arquivo para ignorar arquivos desnecessários no Git  
+Tecnicas-de-Programacao/
 ├── BankSys                        # Pasta com primeiro projeto feito em sala (08/04/2025)  
+├── .gitignore                     # Arquivo para ignorar arquivos desnecessários no Git  
 ├── LICENSE                        # Licença estilo MIT sobre o projeto  
 └── README.md                      # Documentação do projeto  
 ```  
@@ -23,5 +23,3 @@ Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` p
 ## Colaboradores  
 Trabalho de Técnicas de Programação com os devidos créditos para:  
 - [Arthur Vinicius Carneiro Nunes](https://github.com/ApenasUmSonhador) - Membro da equipe  
-- Luzia Vitoria Freitas Loiola - Membro da equipe  
-- [Mateus Santos Araújo](https://github.com/Matheus-Santos-Araujo) - Professor da disciplina  
