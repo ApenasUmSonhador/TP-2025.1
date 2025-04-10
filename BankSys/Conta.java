@@ -4,7 +4,7 @@ public class Conta {
     private String id;
     private double saldo;
 
-    public Conta(String id) {
+    public Conta(String id, double saldo) {
         this.id = id;
         this.saldo = 0.0;
     }
