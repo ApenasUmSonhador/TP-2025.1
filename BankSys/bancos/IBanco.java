@@ -1,11 +1,13 @@
 package BankSys.bancos;
 
-public interface BancoAbstrato {
+import BankSys.contas.Conta;
+
+public interface IBanco {
     public void welcome();
 
     public void bye();
 
-    public void cadastrar();
+    public void cadastrar(Conta conta);
 
     public void creditar(String id, double valor);
 

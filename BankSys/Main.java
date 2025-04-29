@@ -2,7 +2,8 @@ package BankSys;
 
 import BankSys.bancos.BancoArray;
 import BankSys.contas.Conta;
-import BankSys.contas.Poupanca;
+import BankSys.contas.ContaEspecial;
+import BankSys.contas.ContaPoupanca;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,8 +12,8 @@ public class Main {
         BancoArray banco = new BancoArray("Banco Central", 10);
         Conta conta1 = new Conta("123", 1000.0);
         Conta conta2 = new Conta("456", 500.0);
-        Poupanca contaPoupanca1 = new Poupanca("789", 2000.0);
-        Poupanca contaPoupanca2 = new Poupanca("101", 1500.0);
+        ContaPoupanca contaPoupanca1 = new ContaPoupanca("789", 2000.0);
+        ContaPoupanca contaPoupanca2 = new ContaPoupanca("101", 1500.0);
 
         // Cadastrando contas
         banco.cadastrar(conta1);
@@ -41,6 +42,19 @@ public class Main {
         banco.transferir("789", "101", 700.0);
         System.out.println("Saldo da conta Poupança 789 após transferência: " + banco.saldo("789"));
         System.out.println("Saldo da conta Poupança 101 após transferência: " + banco.saldo("101"));
+
+        // Realizando operações de bônus para contas especiais
+        ContaEspecial contaEspecial1 = new ContaEspecial("111", 3000.0);
+        ContaEspecial contaEspecial2 = new ContaEspecial("222", 4000.0);
+        banco.cadastrar(contaEspecial1);
+        banco.cadastrar(contaEspecial2);
+        contaEspecial1.creditar(1000.0); // 10% de bônus
+        contaEspecial1.renderBonus(); // Rendimento de bônus
+        System.out.println("Saldo da conta especial 111 após bônus: " + banco.saldo("111"));
+        contaEspecial2.creditar(2000.0); // 10% de bônus
+        contaEspecial2.renderBonus(); // Rendimento de bônus
+        System.out.println("Saldo da conta especial 222 após bônus: " + banco.saldo("222"));
+
 
         // Realizando operações exclusivas para contas poupança
         contaPoupanca1.renderJuros(5.0); // Rendimento de 5%
