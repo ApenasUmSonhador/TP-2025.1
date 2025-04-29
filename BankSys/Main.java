@@ -1,23 +1,27 @@
 package BankSys;
 
+import BankSys.bancos.BancoArray;
+import BankSys.contas.Conta;
+import BankSys.contas.Poupanca;
+
 public class Main {
     public static void main(String[] args) {
         // Criando um banco e contas
         // O número máximo de contas é 10 para simplificação
-        Banco banco = new Banco("Banco Central", 10);
+        BancoArray banco = new BancoArray("Banco Central", 10);
         Conta conta1 = new Conta("123", 1000.0);
         Conta conta2 = new Conta("456", 500.0);
         Poupanca contaPoupanca1 = new Poupanca("789", 2000.0);
         Poupanca contaPoupanca2 = new Poupanca("101", 1500.0);
-
-        // Exibindo mensagens de boas-vindas
-        banco.welcome();
 
         // Cadastrando contas
         banco.cadastrar(conta1);
         banco.cadastrar(conta2);
         banco.cadastrar(contaPoupanca1);
         banco.cadastrar(contaPoupanca2);
+
+        // Exibindo mensagens de boas-vindas
+        banco.welcome();
 
         // Realizando operações de crédito, débito e transferência
         // Contas comum

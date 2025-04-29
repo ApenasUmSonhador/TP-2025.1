@@ -1,4 +1,4 @@
-package BankSys;
+package BankSys.contas;
 
 public class Conta {
     private String id;

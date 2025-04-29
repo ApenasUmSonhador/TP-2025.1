@@ -1,11 +1,13 @@
-package BankSys;
+package BankSys.bancos;
 
-public class Banco {
+import BankSys.contas.Conta;
+
+public class BancoArray implements IBanco {
     private Conta[] contas; // Array de contas, tamanho 10 para simplificação
     private int contador = 0; // Contador de contas cadastradas
     private String nome; // Nome do banco
 
-    public Banco(String nome, int numMaximoContas) {
+    public BancoArray(String nome, int numMaximoContas) {
         this.nome = nome;
         this.contas = new Conta[numMaximoContas];
         System.out.println("Banco criado com sucesso!");

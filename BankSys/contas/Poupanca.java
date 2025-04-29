@@ -1,4 +1,4 @@
-package BankSys;
+package BankSys.contas;
 
 public class Poupanca extends Conta{
     // Atributos específicos da conta poupança
