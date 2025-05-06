@@ -1,20 +1,9 @@
 package BankSys.contas;
 
-public class Conta {
-    private String id;
-    private double saldo;
-
+public class Conta extends ContaAbstrata {
+    
     public Conta(String id, double saldo) {
-        this.id = id;
-        this.saldo = 0.0;
-    }
-
-    public void creditar(double valor) {
-        if (valor > 0) {
-            this.saldo += valor;
-        } else {
-            System.out.println("Valor inválido para crédito.");
-        }
+        super(id, saldo);
     }
 
     public void debitar(double valor) {
@@ -25,11 +14,4 @@ public class Conta {
         }
     }
 
-    public double getSaldo() {
-        return this.saldo;
-    }
-
-    public String getId() {
-        return this.id;
-    }
 }

@@ -1,15 +1,15 @@
 package BankSys.bancos;
 
-import BankSys.contas.Conta;
+import BankSys.contas.ContaAbstrata;
 
-public class BancoArray implements IBanco {
-    private Conta[] contas; // Array de contas, tamanho 10 para simplificação
+public class BancoArray implements BancoAbstrato {
+    private ContaAbstrata[] contas; // Array de contas, tamanho máximo definido no construtor
     private int contador = 0; // Contador de contas cadastradas
     private String nome; // Nome do banco
 
     public BancoArray(String nome, int numMaximoContas) {
         this.nome = nome;
-        this.contas = new Conta[numMaximoContas];
+        this.contas = new ContaAbstrata[numMaximoContas];
         System.out.println("Banco criado com sucesso!");
     }
 
@@ -24,7 +24,7 @@ public class BancoArray implements IBanco {
         System.out.println("Número de contas cadastradas: " + contador);
     }
 
-    public void cadastrar(Conta conta) {
+    public void cadastrar(ContaAbstrata conta) {
         if (contador < contas.length) {
             contas[contador] = conta;
             contador++;
@@ -34,7 +34,7 @@ public class BancoArray implements IBanco {
         }
     }
 
-    private Conta procurar(String id) {
+    private ContaAbstrata procurar(String id) {
         for (int i = 0; i < contador; i++) {
             if (contas[i].getId().equals(id)) {
                 return contas[i];
@@ -48,7 +48,7 @@ public class BancoArray implements IBanco {
     }
 
     public void creditar(String id, double valor) {
-        Conta conta = procurar(id);
+        ContaAbstrata conta = procurar(id);
         if (conta != null) {
             conta.creditar(valor);
         } else {
@@ -57,7 +57,7 @@ public class BancoArray implements IBanco {
     }
 
     public void debitar(String id, double valor) {
-        Conta conta = procurar(id);
+        ContaAbstrata conta = procurar(id);
         if (conta != null) {
             conta.debitar(valor);
         } else {
@@ -66,7 +66,7 @@ public class BancoArray implements IBanco {
     }
 
     public double saldo(String id) {
-        Conta conta = procurar(id);
+        ContaAbstrata conta = procurar(id);
         if (conta != null) {
             return conta.getSaldo();
         } else {
@@ -76,8 +76,8 @@ public class BancoArray implements IBanco {
     }
 
     public void transferir(String idOrigem, String idDestino, double valor) {
-        Conta contaOrigem = procurar(idOrigem);
-        Conta contaDestino = procurar(idDestino);
+        ContaAbstrata contaOrigem = procurar(idOrigem);
+        ContaAbstrata contaDestino = procurar(idDestino);
         if (contaOrigem != null && contaDestino != null) {
             contaOrigem.debitar(valor);
             contaDestino.creditar(valor);

@@ -13,6 +13,7 @@ public class ContaEspecial extends Conta {
         this.bonus = 0;
     }
 
+    @Override
     public void creditar(double valor) {
         if (valor > 0) {
             super.creditar(valor);

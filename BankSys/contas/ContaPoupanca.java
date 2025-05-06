@@ -1,6 +1,6 @@
 package BankSys.contas;
 
-public class ContaPoupanca extends Conta{
+public class ContaPoupanca extends Conta {
     // Atributos específicos da conta poupança
     // Não há atributos adicionais, mas podemos adicionar se necessário
     public ContaPoupanca(String id, double saldo) {
